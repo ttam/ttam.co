@@ -1,0 +1,69 @@
+==================================================================
+https://keybase.io/chee5eburger
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of http://ttam.co
+  * I am chee5eburger (https://keybase.io/chee5eburger) on keybase.
+  * I have a public key with fingerprint ABAF AB12 164B D84C B414  8801 F1BD 1A11 CC99 0E51
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "0101090c536dc17a2b65822e02ee65a43d2e1eecc30ab885ddfef4772e1602b5f9b40a",
+      "fingerprint": "abafab12164bd84cb4148801f1bd1a11cc990e51",
+      "host": "keybase.io",
+      "key_id": "f1bd1a11cc990e51",
+      "kid": "0101090c536dc17a2b65822e02ee65a43d2e1eecc30ab885ddfef4772e1602b5f9b40a",
+      "uid": "99b27e9b2aa737e7ebddb1b8ccc8e319",
+      "username": "chee5eburger"
+    },
+    "service": {
+      "hostname": "ttam.co",
+      "protocol": "http:"
+    },
+    "type": "web_service_binding",
+    "version": 1
+  },
+  "ctime": 1624923661,
+  "expire_in": 157680000,
+  "prev": "cf1733a2be968c4b71aedb550442f5686a4bfce0ecbd9da4c65ebe23c13991c5",
+  "seqno": 16,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v2.1.13
+Comment: https://keybase.io/crypto
+
+yMIhAnicrVJbSBVRFL2mZlrSiz4qlJykB11szrzn9tNHkvVVFAQ9vJ3HnuvovXeu
+M6Nm9qKH1S0KS3tgUUYEBf4kZGSQlZRoJknQgwJ/IiQ/Soro3Rmpvz47B87h7LPW
+3mttdk9+Zigvwx6cs9CP3N2e0X/3VE1o68vy/AaBOKxeiDQIVTB+QZyB50erbCZE
+BBHxbYpUlTVGkY4loqmGJIEoAWgqVmQmAQKgVBYxMQyVMQssRdd5VBMlolomUUQs
+hAXLTsbATbl20udpMcEWJkhCmkKYoVCiIMUwRGQhwhBGiFLTFEFFnFjheAGDiyPY
+gxLb4TH+iI7L+wf+P+uuGU9nmkTSgR8Y67IOOhDGCCIGpdQAGZkB0AM3iRPA0bQC
+QAVS43LHws6wwH9qbQpBcwM3f1C+jxMlNLCTch3foU6cByt8PxUJOH59KgDVAYn+
+oUeJnWS8i5xQC65nO0khgjiS+naQD2mSYkqypqGwANtStgtRO0CoumaIfAVloDZQ
+ZyFdlnlHwNQMqhAdYWBEVUVFkSxVMzSsEIuCCJQwk2GFatwLSDJFsmkiqgqBoeqk
+E5TkOnGM5/TsWBL7NS4IO+91b84KZeSFJmZPCMYrlJc77e/QsaGcn+Ksc13xH3RS
+tnXy1srSB0uX955rrzr84Ouq1xHvVe21eVuKykreTbg+kPsrcbr/rb0x4by5ct9L
+Nx87cSFypntmQUa8Ym5H8/7RD1O7WjtzWlYUXi7oKzO39S0b6d4xcKnHXHL4qdX6
+JOxlK/LYxSdbskoL5yW+9LQcrNxbf+Xo51T7WFMr1prfWJM/Ps4ciR84L394ttbp
+9YqOrK/ec7Npft/ovuHY7Jbh7+cH3bPVsXQ6+rDgW/vzxpyOzjWPpjTtGbpauKsy
+XXz8annp8wu5i5a1rdj4Pn/xBm3B28fT09bu4k+DN1ZvzmG3mzf1fw8falvV+HRq
+6s6uGesaxfoXdXX+6rO/AVPLQvc=
+=Dkvb
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/chee5eburger
+
+==================================================================
+
