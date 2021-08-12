@@ -53,21 +53,6 @@
         document.documentElement.className = e.target.dataset.theme
     })
 
-    const detectTheme = element => {
-        const map = {
-            'rgb(195, 37, 43)': 'red',
-            'rgb(217, 107, 10)': 'orange',
-            'rgb(225, 172, 20)': 'yellow',
-            'rgb(0, 99, 225)': 'blue',
-            'rgb(77, 160, 50)': 'green',
-            'rgb(125, 42, 126)': 'purple',
-            'rgb(217, 59, 133)': 'pink',
-            'rgb(128, 128, 128)': 'graphite',
-        }
-
-        document.documentElement.className = map[window.getComputedStyle(element)['background-color']]
-    }
-
     if (navigator.userAgent.indexOf('Firefox/') > -1) {
         document.documentElement.className = 'auto';
     }
