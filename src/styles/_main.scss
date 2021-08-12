@@ -1,0 +1,11 @@
+html { background-color: var(--color); }
+
+body {
+  @include background-image;
+  @include flex;
+
+  background-color: var(--background);
+  height: 100vh;
+  margin: 0;
+  width: 100vw;
+}

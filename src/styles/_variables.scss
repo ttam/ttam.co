@@ -1,0 +1,82 @@
+$blur-opacity: 0.35;
+$button-size: 40px;
+$footer-height: 68px;
+$theme-color: #000000;
+$theme-inverse: #ffffff;
+$transition-speed: 200ms;
+
+$themes: (
+  "red": rgb(195, 37, 43),
+  "orange": rgb(217, 107, 10),
+  "yellow": rgb(225, 172, 20),
+  "blue": rgb(0, 99, 225),
+  "green": rgb(77, 160, 50),
+  "purple": rgb(125, 42, 126),
+  "pink": rgb(217, 59, 133),
+  "graphite": rgb(128, 128, 128),
+);
+
+@mixin background-image {
+  background-attachment: fixed;
+  background-image: url(../images/background.png);
+}
+
+@mixin bordered-link {
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  box-sizing: border-box;
+  @include rounded-link;
+}
+
+@mixin flex {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+@mixin rounded-link {
+  border-radius: 50%;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-block;
+  height: $button-size;
+  line-height: $button-size;
+  text-align: center;
+  width: $button-size;
+}
+
+.auto { --color: highlight; }
+@each $name, $color in $themes {
+  .#{$name} { --color: #{$color}; }
+}
+
+:root {
+  --background: rgb(17, 17, 17, 0.6);
+  --subtitle-size: 4.5w;
+  --theme-picker-offset: 10px;
+  --theme-picker-width: 355px;
+  --title-size: 13vw;
+}
+
+@media (prefers-color-scheme: light) {
+  :root { --background: rgb(85, 85, 85, 0.4); }
+}
+
+@media only screen and (min-width: 768px) {
+  :root {
+    --theme-picker-offset: 60px;
+  }
+}
+
+@media only screen and (min-width: 425px) {
+  :root {
+    --theme-picker-width: 400px;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  :root {
+    --subtitle-size: 1.7vw;
+    --title-size: 5vw;
+  }
+}

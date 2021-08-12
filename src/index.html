@@ -1,0 +1,76 @@
+<!doctype html>
+<html class="green" lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Matt Bannon</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Arvo:wght@700&display=swap">
+    <meta name="theme-color" content="#fafafa">
+    <script src="https://kit.fontawesome.com/34ddee2a2b.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+<header>
+    <h1>Matt&nbsp;Bannon</h1>
+    <p>Coder. Blogger. Pie Chef</p>
+</header>
+
+<main></main>
+
+<section id="theme-picker">
+    <a><i class="fas fa-paint-brush"></i></a>
+    <ul>
+        <li><a data-theme="red"></a></li>
+        <li><a data-theme="orange"></a></li>
+        <li><a data-theme="yellow"></a></li>
+        <li><a data-theme="green"></a></li>
+        <li><a data-theme="blue"></a></li>
+        <li><a data-theme="purple"></a></li>
+        <li><a data-theme="pink"></a></li>
+        <li><a data-theme="graphite"></a></li>
+    </ul>
+</section>
+
+<footer>
+    <ul>
+        <li><a href="https://instagram.com/bannon" target="_blank"><i class="fab fa-instagram"></i></a></li>
+        <li><a href="https://twitter.com/ttam" target="_blank"><i class="fab fa-twitter"></i></a></li>
+        <li><a href="https://github.com/ttam" target="_blank"><i class="fab fa-github"></i></a></li>
+        <li><a href="https://facebook.com/bannon" target="_blank"><i class="fab fa-facebook"></i></a></li>
+        <li><a href="https://linkedin.com/in/ttam" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
+    </ul>
+</footer>
+
+<script>
+    document.querySelector('#theme-picker > a').addEventListener('click', e => {
+        document.querySelectorAll('a[data-theme]').forEach(i => i.classList.toggle('visible'));
+    });
+
+    document.querySelector('#theme-picker ul').addEventListener('click', e => {
+        document.documentElement.className = e.target.dataset.theme
+    })
+
+    const detectTheme = element => {
+        const map = {
+            'rgb(195, 37, 43)': 'red',
+            'rgb(217, 107, 10)': 'orange',
+            'rgb(225, 172, 20)': 'yellow',
+            'rgb(0, 99, 225)': 'blue',
+            'rgb(77, 160, 50)': 'green',
+            'rgb(125, 42, 126)': 'purple',
+            'rgb(217, 59, 133)': 'pink',
+            'rgb(128, 128, 128)': 'graphite',
+        }
+
+        document.documentElement.className = map[window.getComputedStyle(element)['background-color']]
+    }
+
+    if (navigator.userAgent.indexOf('Firefox/') > -1) {
+        document.documentElement.className = 'auto';
+    }
+</script>
+</body>
+</html>

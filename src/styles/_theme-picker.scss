@@ -1,0 +1,41 @@
+#theme-picker {
+  right: var(--theme-picker-offset);
+  bottom: $button-size + $footer-height;
+  position: fixed;
+  height: $button-size;
+
+  a { @include bordered-link; }
+
+  ul {
+    overflow: hidden;
+    bottom: 0;
+    display: flex;
+    height: $button-size;
+    justify-content: space-between;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    right: 50px;
+    width: var(--theme-picker-width);
+  }
+
+
+  li a {
+    @include background-image;
+    background-color: var(--color);
+    opacity: 0.6;
+    transform: scale(0);
+    transition: all $transition-speed ease-in-out;
+    transition-property: left, transform;
+
+    &:hover { opacity: 0.9; }
+
+    &.visible { left: 0; transform: scale(1); }
+  }
+
+  $length: length($themes);
+  @for $i from $length through 1 {
+    li:nth-child(#{$i}) a { transition-delay: ($length - $i) * $transition-speed / 20; }
+  }
+}

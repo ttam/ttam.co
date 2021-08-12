@@ -1,0 +1,26 @@
+{
+  "name": "ttam.co",
+  "version": "1.0.0",
+  "description": "ttam.co",
+  "main": "index.html",
+  "scripts": {
+    "build": "npm run scss && npm run copy",
+    "copy": "mkdir -p dist/images && cp src/index.html dist && cp src/images/* dist/images/",
+    "scss": "node-sass src/styles -o dist/styles --output-style compressed",
+    "watch": "node-sass --watch src/styles -o dist/styles --output-style compressed",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ttam/ttam.co.git"
+  },
+  "author": "Matt Bannon",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ttam/ttam.co/issues"
+  },
+  "homepage": "https://github.com/ttam/ttam.co#readme",
+  "devDependencies": {
+    "node-sass": "^6.0.1"
+  }
+}
