@@ -47,7 +47,7 @@ $themes: (
 
 .auto { --color: highlight; }
 @each $name, $color in $themes {
-  .#{$name} { --color: #{$color}; }
+  .#{$name}, [data-theme=#{$name}] { --color: #{$color}; }
 }
 
 :root {
