@@ -1,16 +1,15 @@
 footer {
-  bottom: 0;
   box-shadow: 0 1px 20px 0 rgba(0, 0, 0, 0.2);
   height: $footer-height;
-  position: fixed;
+  position: sticky;
   width: 100%;
 
   ul {
-    @include flex;
+    @include flex(row);
     list-style-type: none;
     line-height: $footer-height;
     margin: 0 auto;
-    max-width: 800px;
+    max-width: 15rem;
     padding: 0;
     text-align: center;
   }

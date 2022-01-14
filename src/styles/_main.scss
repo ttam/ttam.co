@@ -1,11 +1,15 @@
-html { background-color: var(--color); }
+html, body { height: 100%; }
+
+html {
+  background-color: var(--color);
+  overscroll-behavior: none;
+}
 
 body {
   @include background-image;
   @include flex;
 
   background-color: var(--background);
-  height: 100vh;
   margin: 0;
   width: 100vw;
 }

@@ -25,12 +25,17 @@ $themes: (
   border: 1px solid rgba(255, 255, 255, 0.8);
   box-sizing: border-box;
   @include rounded-link;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+  }
 }
 
-@mixin flex {
+@mixin flex($direction: column) {
   align-items: center;
   display: flex;
-  flex-direction: row;
+  flex-direction: $direction;
   justify-content: center;
 }
 
@@ -45,27 +50,22 @@ $themes: (
   width: $button-size;
 }
 
-.auto { --color: highlight; }
 @each $name, $color in $themes {
   .#{$name}, [data-theme=#{$name}] { --color: #{$color}; }
 }
 
 :root {
   --background: rgb(17, 17, 17, 0.6);
+  --flex-basis: 100%;
   --subtitle-size: 4.5w;
   --theme-picker-offset: 10px;
   --theme-picker-width: 355px;
   --title-size: 13vw;
+  --tooltip-display: none;
 }
 
 @media (prefers-color-scheme: light) {
   :root { --background: rgb(85, 85, 85, 0.4); }
-}
-
-@media only screen and (min-width: 768px) {
-  :root {
-    --theme-picker-offset: 60px;
-  }
 }
 
 @media only screen and (min-width: 425px) {
@@ -74,8 +74,17 @@ $themes: (
   }
 }
 
+@media only screen and (min-width: 768px) {
+  :root {
+    --flex-basis: calc(33% - 1rem);
+    --theme-picker-offset: 60px;
+    --tooltip-display: inline-block;
+  }
+}
+
 @media only screen and (min-width: 1440px) {
   :root {
+    --flex-basis: calc(25% - 1rem);
     --subtitle-size: 1.7vw;
     --title-size: 5vw;
   }
