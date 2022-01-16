@@ -1,0 +1,102 @@
+<!doctype html>
+<html class="green" lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Matt Bannon</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Arvo:wght@700&family=Montserrat:wght@400&display=swap">
+    <meta name="theme-color" content="#4ea032">
+    <script src="https://kit.fontawesome.com/34ddee2a2b.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+<header>
+    <h1>Matt&nbsp;Bannon</h1>
+    <p>Coming soon.</p>
+</header>
+
+<main>
+    <template id="portfolio">
+        <article>
+            <h2><a href="#"></a></h2>
+            <p>tooltip.</p>
+
+            <ul>
+                <li><a href="#"><i class="fab fa-github"></i></a></li>
+            </ul>
+        </article>
+    </template>
+</main>
+
+<section id="theme-picker">
+    <a><i class="fas fa-paint-brush"></i></a>
+    <ul>
+        <li><a data-theme="red"></a></li>
+        <li><a data-theme="orange"></a></li>
+        <li><a data-theme="yellow"></a></li>
+        <li><a data-theme="green"></a></li>
+        <li><a data-theme="blue"></a></li>
+        <li><a data-theme="purple"></a></li>
+        <li><a data-theme="pink"></a></li>
+        <li><a data-theme="graphite"></a></li>
+    </ul>
+</section>
+
+<footer>
+    <ul>
+        <li><a href="https://twitter.com/ttam" target="_blank"><i class="fab fa-twitter"></i></a></li>
+        <li><a href="https://github.com/ttam" target="_blank"><i class="fab fa-github"></i></a></li>
+        <li><a href="https://linkedin.com/in/ttam" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
+    </ul>
+</footer>
+
+<script>
+    [
+        {
+            github: 'https://github.com/awsmio',
+            href: 'https://awsm.io',
+            title: 'awsm.io',
+            tooltip: 'A collection of web and command line tools'
+        },
+        {
+            github: 'https://www.npmjs.com/package/@bannon/powerset',
+            href: 'https://www.npmjs.com/package/@bannon/powerset',
+            title: 'Powerset',
+            tooltip: 'A JavaScript implementation of calculating the powerset of a given array'
+        },
+        {
+            github: 'https://github.com/ttam/bann.online',
+            href: 'https://bann.online',
+            title: 'bann.online',
+            tooltip: 'A waste of a domain hack'
+        },
+    ].forEach(({ github, href, title, tooltip }) => {
+        const template = document.querySelector('#portfolio');
+        template.content.querySelector('h2 a').href = href;
+        template.content.querySelector('h2 a').innerText = title;
+        template.content.querySelector('p').innerHTML = tooltip;
+        template.content.querySelector('ul a').href = github;
+
+        document.querySelector('main').appendChild(document.importNode(template.content, true));
+    });
+
+    document.querySelector('#theme-picker > a').addEventListener('click', e => {
+        document.querySelectorAll('a[data-theme]').forEach(i => i.classList.toggle('visible'));
+    });
+
+    document.querySelector('#theme-picker ul').addEventListener('click', e => {
+        const html = document.documentElement;
+        html.className = e.target.dataset.theme;
+        document.querySelector('meta[name=theme-color]').setAttribute('content', window.getComputedStyle(html)['background-color']);
+    });
+
+    document.querySelectorAll('article').forEach(article => article.addEventListener('mousemove', ({ clientX, clientY }) => {
+        const tooltip = article.querySelector('p');
+        tooltip.style.left = `${clientX}px`;
+        tooltip.style.top = `${clientY}px`;
+    }));
+</script>
+</body>
+</html>
