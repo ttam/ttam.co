@@ -27,7 +27,6 @@ $themes: (
   @include rounded-link;
 
   &:hover {
-    background: rgba(255, 255, 255, 0.1);
     cursor: pointer;
   }
 }
@@ -55,6 +54,11 @@ $themes: (
 }
 
 :root {
+  --header-flex: 0;
+  --portfolio-flex: 0;
+  --body-flex-direction: column;
+  --portfolio-flex-direction: row;
+
   --background: rgb(17, 17, 17, 0.6);
   --flex-basis: 100%;
   --subtitle-size: 4.5w;
@@ -68,24 +72,17 @@ $themes: (
   :root { --background: rgb(85, 85, 85, 0.4); }
 }
 
-@media only screen and (min-width: 425px) {
+@media only screen and (min-width: 1023px) {
   :root {
-    --theme-picker-width: 400px;
-  }
-}
+    --header-flex: 6;
+    --portfolio-flex: 4;
+    --body-flex-direction: row;
+    --portfolio-flex-direction: column;
 
-@media only screen and (min-width: 768px) {
-  :root {
-    --flex-basis: calc(33% - 1rem);
+    --flex-basis: 1;
     --theme-picker-offset: 60px;
     --tooltip-display: inline-block;
-  }
-}
 
-@media only screen and (min-width: 1440px) {
-  :root {
-    --flex-basis: calc(25% - 1rem);
-    --subtitle-size: 1.7vw;
     --title-size: 5vw;
   }
 }

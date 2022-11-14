@@ -12,21 +12,23 @@
 </head>
 
 <body>
-<header>
-    <h1>Matt&nbsp;Bannon</h1>
-</header>
-
 <main>
-    <template id="portfolio">
-        <article>
-            <h2><a href="#" target="_blank"></a></h2>
-            <p></p>
+    <header>
+        <h1>Matt&nbsp;Bannon</h1>
+    </header>
 
-            <ul>
-                <li><a href="#" target="_blank"><i class="fab fa-github"></i></a></li>
-            </ul>
-        </article>
-    </template>
+    <section id="portfolio">
+        <template id="portfolio-item">
+            <article>
+                <h2><a href="#" target="_blank"></a></h2>
+                <p></p>
+
+                <ul>
+                    <li><a href="#" target="_blank"><i class="fab fa-github"></i></a></li>
+                </ul>
+            </article>
+        </template>
+    </section>
 </main>
 
 <section id="theme-picker">
@@ -79,13 +81,13 @@
             tooltip: 'See mutual actors across a selection of movies'
         },
     ].forEach(({ github, href, title, tooltip }) => {
-        const template = document.querySelector('#portfolio');
+        const template = document.querySelector('#portfolio-item');
         template.content.querySelector('h2 a').href = href;
         template.content.querySelector('h2 a').innerText = title;
         template.content.querySelector('p').innerHTML = tooltip;
         template.content.querySelector('ul a').href = github;
 
-        document.querySelector('main').appendChild(document.importNode(template.content, true));
+        document.querySelector('#portfolio').appendChild(document.importNode(template.content, true));
     });
 
     document.querySelector('#theme-picker > a').addEventListener('click', e => {
