@@ -19,6 +19,7 @@ $themes: (
 @mixin background-image {
   background-attachment: fixed;
   background-image: url(../images/background.png);
+  background-size: cover;
 }
 
 @mixin bordered-link {
