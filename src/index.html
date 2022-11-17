@@ -13,6 +13,7 @@
     <link rel="me" href="https://github.com/ttam">
     <link rel="me" href="https://linkedin.com/in/ttam">
     <meta name="theme-color" content="#4ea032">
+    <link rel="shortcut icon" type="image/png" sizes="32x32" href="/images/favicon-green.png">
     <script src="https://kit.fontawesome.com/34ddee2a2b.js" crossorigin="anonymous"></script>
 </head>
 
@@ -103,6 +104,7 @@
         const html = document.documentElement;
         html.className = e.target.dataset.theme;
         document.querySelector('meta[name=theme-color]').setAttribute('content', window.getComputedStyle(html)['background-color']);
+        document.querySelector('link[rel="shortcut icon"]').setAttribute('href', `/images/favicon-${e.target.dataset.theme}.png`);
     });
 
     document.querySelectorAll('article').forEach(article => article.addEventListener('mousemove', ({ clientX, clientY }) => {
