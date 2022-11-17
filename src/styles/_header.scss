@@ -9,6 +9,7 @@ header {
   position: relative;
   text-align: right;
   text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.3);
+  width: calc(min(25em, 80%)); // calc() prevents "incompatible units" error
   z-index: 1;
 
   &:after {
@@ -23,7 +24,7 @@ header {
     top: 55%;
     position: absolute;
     transform: translate(-50%, -50%);
-    width: 25em;
+    width: calc(min(25em, 80%)); // calc() prevents "incompatible units" error
     z-index:-1;
   }
 

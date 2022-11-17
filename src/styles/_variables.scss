@@ -63,8 +63,12 @@ $themes: (
   --background: rgb(17, 17, 17, 0.6);
   --flex-basis: 100%;
   --subtitle-size: 4.5w;
+  --theme-picker-direction: column;
   --theme-picker-offset: 10px;
-  --theme-picker-width: 355px;
+  --theme-picker-column: 355px;
+  --theme-picker-row: 40px;
+  --theme-picker-offset-column: 40px;
+  --theme-picker-offset-row: 0px;
   --title-size: 13vw;
   --tooltip-display: none;
 }
@@ -81,7 +85,12 @@ $themes: (
     --portfolio-flex-direction: column;
 
     --flex-basis: 1;
+    --theme-picker-column: 40px;
+    --theme-picker-direction: row;
     --theme-picker-offset: 60px;
+    --theme-picker-offset-column: 0px;
+    --theme-picker-offset-row: 45px;
+    --theme-picker-row: 355px;
     --tooltip-display: inline-block;
 
     --title-size: 5vw;

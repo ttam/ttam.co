@@ -8,16 +8,17 @@
 
   ul {
     overflow: hidden;
-    bottom: 0;
+    bottom: var(--theme-picker-offset-column);
     display: flex;
-    height: $button-size;
+    flex-direction: var(--theme-picker-direction);
+    height: var(--theme-picker-column);
     justify-content: space-between;
     list-style: none;
     margin: 0;
     padding: 0;
     position: absolute;
-    right: 50px;
-    width: var(--theme-picker-width);
+    right: var(--theme-picker-offset-row);
+    width: var(--theme-picker-row);
   }
 
 
@@ -28,9 +29,8 @@
     transition: all $transition-speed ease-in-out;
     transition-property: opacity;
 
-    &:hover { opacity: 1; }
-
     &.visible { opacity: 0.6; }
+    &.visible:hover { opacity: 1; }
   }
 
   $length: length($themes);
