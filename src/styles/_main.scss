@@ -3,6 +3,7 @@ html, body { height: 100%; }
 html {
   background-color: var(--color);
   overscroll-behavior: none;
+  transition: --color 300ms ease-in-out;
 }
 
 body {

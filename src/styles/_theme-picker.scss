@@ -1,3 +1,9 @@
+@property --color {
+  inherits: true;
+  initial-value: #ff00ff;
+  syntax: "<color>";
+}
+
 #theme-picker {
   right: var(--theme-picker-offset);
   bottom: $button-size + $footer-height;
