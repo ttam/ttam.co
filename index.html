@@ -96,16 +96,20 @@
         document.querySelector('#portfolio').appendChild(document.importNode(template.content, true));
     });
 
+    const selectTheme = theme => {
+        const html = document.documentElement;
+        html.className = theme;
+        document.querySelector('meta[name=theme-color]').setAttribute('content', window.getComputedStyle(html)['background-color']);
+        document.querySelector('link[rel="shortcut icon"]').setAttribute('href', `/images/favicon-${theme}.png`);
+    }
+
     document.querySelector('#theme-picker > a').addEventListener('click', e => {
         document.querySelectorAll('a[data-theme]').forEach(i => i.classList.toggle('visible'));
     });
 
     document.querySelector('#theme-picker ul').addEventListener('click', e => {
-        const html = document.documentElement;
         const theme = e.target.dataset.theme;
-        html.className = theme;
-        document.querySelector('meta[name=theme-color]').setAttribute('content', window.getComputedStyle(html)['background-color']);
-        document.querySelector('link[rel="shortcut icon"]').setAttribute('href', `/images/favicon-${theme}.png`);
+        selectTheme(theme);
         window.localStorage.setItem('theme', theme);
     });
 
@@ -118,11 +122,10 @@
     let selectedTheme = window.localStorage.getItem('theme');
     if (selectedTheme === null) {
         const dayOfWeek = (new Date()).getDay();
-        console.log(`#theme-picker ul a:nth-child(${dayOfWeek})`);
         selectedTheme = document.querySelector(`#theme-picker ul li:nth-child(${dayOfWeek}) a`).dataset.theme;
     }
 
-    document.querySelector(`#theme-picker ul a[data-theme=${selectedTheme}]`).click();
+    selectTheme(selectedTheme);
 </script>
 </body>
 </html>
